@@ -39,7 +39,8 @@
         </form>
       </div>
       <div class="col">
-        <city-list v-bind:cities="data.allCities" />
+        <CityList v-bind:cities="data.allCities"
+        :withCountry="true" />
       </div>
     </div>
   </div>
@@ -69,6 +70,7 @@ function fetchCities() {
     .then((response) => response.json())
     .then((json) => {
       data.allCities = json;
+      console.log(data.allCities);
     })
     .catch((error) => alert(error));
 }

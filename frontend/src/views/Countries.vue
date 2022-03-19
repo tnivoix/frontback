@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h2>Les pays</h2>
-    <country-list />
+    <CountryList />
   </div>
 </template>
 

@@ -5,14 +5,14 @@
         <tr>
           <th>Nom</th>
           <th>Population</th>
-          <th>Pays</th>          
+          <th v-if="withCountry">Pays</th>          
         </tr>
       </thead>
       <tbody>
         <tr v-for="city in cities" :key="city.id">
           <td>{{ city.name }}</td>
           <td>{{ city.population }}</td>
-          <td>{{ city.country.name }}</td>
+          <td v-if="withCountry">{{ city.country.name}}</td>
         </tr>
       </tbody>
     </table>
@@ -25,5 +25,9 @@ const props = defineProps({
     type: Array,
     required: true,
   },
+  withCountry: {
+    type: Boolean,
+    required: true,
+  }
 });
 </script>
